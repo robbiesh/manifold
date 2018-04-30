@@ -54,6 +54,11 @@ h2 {
   font-weight: 400;
   color: $blue;
   margin-bottom: 30px;
+
+  @include media-query($medium-down) {
+    font-size: 26px;
+    line-height: 1.31em;
+  }
 }
 
 p {
@@ -165,22 +170,24 @@ p {
 }
 
 .text-image {
-  background-size: cover;
-  background-position: right top;
-  background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: right top;
+  // background-repeat: no-repeat;
 
-  &:after {
-    content: "";
-    background-image: url("../img/hero.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right top;
-    width: 30%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  @include media-query($large-up) {
+    &:after {
+      content: "";
+      background-image: url("../img/hero.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right top;
+      width: 30%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
   }
 }
 
@@ -237,10 +244,16 @@ p {
       text-decoration: none;
       color: $blue;
     }
+
+    @include media-query($medium-down) {
+      font-size: 16px;
+      line-height: 2.22em;
+    }
   }
 
   @include media-query($medium-down) {
     width: 100%;
+    text-align: center;
   }
 }
 
@@ -278,6 +291,11 @@ p {
     line-height: 2.2em;
     color: $blue;
     margin-bottom: 0;
+
+    @include media-query($medium-down) {
+      font-size: 16px;
+      line-height: 2.22em;
+    }
   }
 
   @include media-query($medium-down) {
@@ -311,6 +329,10 @@ p {
   left: 20px;
   color: white;
   font-size: 18px;
+
+  @include media-query($medium-down) {
+    font-size: 12px;
+  }
 }
 
 .image-text {
@@ -332,6 +354,7 @@ p {
 
   @include media-query($medium-down) {
     width: 100%;
+    text-align: center;
   }
 
   p {
@@ -341,6 +364,11 @@ p {
     font-stretch: normal;
     line-height: 2.22em;
     margin-bottom: 40px;
+
+    @include media-query($medium-down) {
+      font-size: 16px;
+      line-height: 2.22em;
+    }
   }
 
   ul {
@@ -352,6 +380,11 @@ p {
     margin: 0;
     margin-bottom: 50px;
     line-height: 2.22em;
+
+    @include media-query($medium-down) {
+      list-style: none;
+      font-size: 16px;
+    }
   }
 
   li {
@@ -366,6 +399,10 @@ p {
 
 .cta {
   height: 400px;
+
+  @include media-query($medium-down) {
+    height: 300px;
+  }
 }
 
 .cta__container {
@@ -384,13 +421,17 @@ p {
 
     @include media-query($medium-down) {
       padding: 0;
-      padding-bottom: 10px;
+      padding-bottom: 50px;
       width: 100%;
     }
   }
 
   @include media-query($medium-down) {
     width: 100%;
+
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
   }
 }
 
