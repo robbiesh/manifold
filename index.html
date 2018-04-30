@@ -20,6 +20,16 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.velocity.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
 </head>
 
 <body>
@@ -41,8 +51,12 @@
       </div>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon fill="white" points="0,100 40,100 85,0 0,0" />
+        <polygon id="polygon" fill="white" points="0,100 40,100 85,0 50,0 0,0" />
+        <polygon id="polygon-mobile" fill="white" points="0,90 100,80 100,0 0,0" />
       </svg>
+
+      <div id="trigger1"></div>
+      <div id="trigger2"></div>
 
     </section>
 
@@ -204,6 +218,6 @@
 
   </main>
 
-  <!-- <script src="js/scripts.js"></script> -->
+  <script src="js/scripts.js"></script>
 </body>
 </html>

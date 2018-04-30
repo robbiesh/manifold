@@ -104,6 +104,7 @@ p {
   line-height: 1em;
   display: inline-block;
   text-align: left;
+  transition: opacity 0.3s;
 
   &:after {
     position: absolute;
@@ -116,6 +117,10 @@ p {
 
   @include media-query($medium-down) {
     font-size: 16px;
+  }
+
+  &:hover {
+    opacity: 0.5;
   }
 }
 
@@ -485,5 +490,29 @@ footer {
         content: "";
       }
     }
+  }
+}
+
+#trigger1 {
+  position: absolute;
+  top: 50%;
+}
+
+#trigger2 {
+  position: absolute;
+  top: 75%;
+}
+
+#polygon-mobile {
+  display: none;
+
+  @include media-query($medium-down) {
+    display: block;
+  }
+}
+
+#polygon {
+  @include media-query($medium-down) {
+    display: none;
   }
 }

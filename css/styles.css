@@ -520,6 +520,8 @@ p {
   line-height: 1em;
   display: inline-block;
   text-align: left;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .btn:after {
   position: absolute;
@@ -534,6 +536,9 @@ p {
   .btn {
     font-size: 16px;
   }
+}
+.btn:hover {
+  opacity: 0.5;
 }
 .banner {
   overflow: hidden;
@@ -897,4 +902,25 @@ footer li > div:after {
   height: 16px;
   width: 10px;
   content: "";
+}
+#trigger1 {
+  position: absolute;
+  top: 50%;
+}
+#trigger2 {
+  position: absolute;
+  top: 75%;
+}
+#polygon-mobile {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  #polygon-mobile {
+    display: block;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #polygon {
+    display: none;
+  }
 }
