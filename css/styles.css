@@ -1098,3 +1098,9 @@ footer li > div:after {
     padding: 12.5px;
   }
 }
+.image-text--bg {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

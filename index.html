@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/grid.css?v=1.0">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -32,6 +34,8 @@
 
   <script src="js/jquery.typist.min.js"></script>
 
+  <script src="js/wow.min.js"></script>
+
 </head>
 
 <body>
@@ -44,7 +48,7 @@
         </div>
 
         <div class="banner__container">
-          <div class="container">
+          <div class="container wow fadeInLeft">
             <h1><span class="highlight">Manifold AWS</span><br>Serverless<br>Blockchain</h1>
             <p>Deploy and manage serverless<br>blockchains today.</p>
 
@@ -63,14 +67,14 @@
 
         <div class="text-image__container">
           <div class="container container__flex">
-            <div class="text-image__text">
+            <div class="text-image__text wow fadeInLeft">
               <h2>Easy to <span class="highlight">deploy</span></h2>
               <p>It's easy to get started with Manifold AWS. Follow the <a href="" title="">Getting Started Guide</a> to create your first Manifold AWS blockchain in a few easy steps.</p>
               <a href="" title="" class="btn">Getting Started Guide</a>
             </div>
 
             <div class="text-image__image">
-              <div class="terminal">
+              <div class="terminal wow fadeInRight">
 
                 <div class="terminal-header">
                   <div class="terminal-circle-container">
@@ -98,14 +102,14 @@
         <div class="gallery__container">
 
           <div class="container">
-            <div class="gallery__text text-center">
+            <div class="gallery__text text-center wow fadeInUp">
               <h2>Serverless Blockchain for any app, any industry</h2>
               <p>Manifold AWS lets you deploy and manage blockchains for any application, from intelligent automation, to deep learning for any industry.</p>
             </div>
           </div>
 
           <div class="gallery__images">
-            <div class="gallery__image">
+            <div class="gallery__image wow fadeInUp" data-wow-delay="0.25s">
               <div class="gallery__image--bg" style="background-image: url('img/advertising.jpg');">
               </div>
               <div class="gallery__image--label">
@@ -113,21 +117,21 @@
               </div>
             </div>
 
-            <div class="gallery__image">
+            <div class="gallery__image wow fadeInUp" data-wow-delay="0.5s">
               <div class="gallery__image--bg" style="background-image: url('img/supply-chain.jpg')"></div>
               <div class="gallery__image--label">
                 <span>Supply Chain</span>
               </div>
             </div>
 
-            <div class="gallery__image">
+            <div class="gallery__image wow fadeInUp" data-wow-delay="0.75s">
               <div class="gallery__image--bg" style="background-image: url('img/energy.jpg')"></div>
               <div class="gallery__image--label">
                 <span>Energy</span>
               </div>
             </div>
 
-            <div class="gallery__image">
+            <div class="gallery__image wow fadeInUp" data-wow-delay="1s">
               <div class="gallery__image--bg" style="background-image: url('img/iot.jpg')"></div>
               <div class="gallery__image--label">
                 <span>Internet of Things</span>
@@ -139,7 +143,11 @@
 
       </section>
 
-      <section class="image-text" style="background-image: url('img/illustration.png');">
+      <section class="image-text">
+
+        <div class="image-text--bg wow fadeInUp">
+          <img src="img/illustration.png" alt="" />
+        </div>
 
         <div class="image-text__container">
           <div class="container container__flex container__flex--content-end">
@@ -148,7 +156,7 @@
               <img src="img/illustration-fade.png" alt="" />
             </div>
 
-            <div class="image-text__text">
+            <div class="image-text__text wow fadeInRight">
               <h2>Built for AWS</h2>
               <p>Take serverless blockchain to your customers, with all the benefits of AWS Lambda:</p>
 

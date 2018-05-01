@@ -15,8 +15,7 @@ var scene2 = new ScrollMagic.Scene({
   .setTween("#polygon", 0.5, {attr: {points:"0,100 100,100 100,0 0,0"}}) // trigger a TweenMax.to tween
   .addTo(controller);
 
-//
-//
+
 // $(function () { // wait for document ready
 // 	// init
 // 	var controller = new ScrollMagic.Controller({
@@ -39,15 +38,30 @@ var scene2 = new ScrollMagic.Scene({
 // 	}
 // });
 
-$(document).ready(function() {
-});
-
 jQuery(function($) {
 
+  
+
   $('.typed').typist({speed: 12, text: 'asdfjkl\n'})
-  .typistPause(3000)
-  .typistAdd('./deploy.sh <bucket asdfjk> <stack>\n')
-  .typistPause(3000)
-  .typistAdd('aws --profile mlp lambda invoke -- function-name mlp-init')
+    .typistPause(3000)
+    .typistAdd('./deploy.sh <bucket asdfjk> <stack>\n')
+    .typistPause(3000)
+    .typistAdd('aws --profile mlp lambda invoke -- function-name mlp-init');
 
 });
+
+var wow = new WOW(
+  {
+    boxClass:     'wow',      // animated element css class (default is wow)
+    animateClass: 'animated', // animation css class (default is animated)
+    offset:       0,          // distance to the element when triggering the animation (default is 0)
+    mobile:       true,       // trigger animations on mobile devices (default is true)
+    live:         true,       // act on asynchronously loaded content (default is true)
+    callback:     function(box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null // optional scroll container selector, otherwise use window
+  }
+);
+wow.init();
