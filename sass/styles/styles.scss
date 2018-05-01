@@ -706,4 +706,8 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
+
+  @include media-query($medium-down) {
+    display: none;
+  }
 }
