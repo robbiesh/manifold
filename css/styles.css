@@ -443,6 +443,7 @@ section {
   height: 100vh;
   width: 100%;
   position: relative;
+  z-index: 10;
 }
 footer {
   position: relative;
@@ -549,17 +550,6 @@ p {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.banner svg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-filter: drop-shadow(10px 10px 7px rgba(0, 0, 0, 0.4));
-  filter: drop-shadow(10px 10px 7px rgba(0, 0, 0, 0.4));
-}
 .banner__container {
   position: absolute;
   top: 50%;
@@ -580,21 +570,6 @@ p {
 @media only screen and (max-width: 767px) {
   .banner__container {
     text-align: center;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .text-image:after {
-    content: "";
-    background-image: url("../img/hero.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right top;
-    width: 30%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
   }
 }
 .text-image__container {
@@ -722,12 +697,10 @@ p {
 }
 .gallery__image {
   width: 25%;
-  padding-bottom: 25%;
-  height: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   position: relative;
+  border-bottom: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 @media only screen and (max-width: 767px) {
   .gallery__image {
@@ -735,12 +708,32 @@ p {
     padding-bottom: 50%;
   }
 }
+.gallery__image:hover .gallery__image--bg {
+  opacity: 0.6;
+}
+.gallery__image:hover .gallery__image--label {
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+}
+.gallery__image--bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
 .gallery__image--label {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: white;
   font-size: 18px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
 @media only screen and (max-width: 767px) {
   .gallery__image--label {
@@ -903,13 +896,34 @@ footer li > div:after {
   width: 10px;
   content: "";
 }
+main {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.svg--bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: drop-shadow(10px 10px 7px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(10px 10px 7px rgba(0, 0, 0, 0.4));
+  z-index: -1;
+}
 #trigger1 {
   position: absolute;
-  top: 50%;
+  top: 60%;
 }
 #trigger2 {
   position: absolute;
-  top: 75%;
+  top: 50%;
 }
 #polygon-mobile {
   display: none;
