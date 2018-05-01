@@ -30,11 +30,13 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
 
+  <script src="js/jquery.typist.min.js"></script>
+
 </head>
 
 <body>
-  <main style="background-image: url('img/hero.jpg');">
-    <div class="scroll">
+  <main>
+
       <section class="banner">
 
         <div class="logo">
@@ -52,6 +54,9 @@
 
         <div id="trigger1"></div>
 
+        <svg class="svg--bg--mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon id="polygon-mobile" fill="white" points="0,90 100,80 100,0 0,0" />
+        </svg>
       </section>
 
       <section class="text-image">
@@ -65,45 +70,21 @@
             </div>
 
             <div class="text-image__image">
-              <svg width="730px" height="380px" viewBox="0 0 730 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                    <path d="M4,0 L666,0 C668.209139,-4.05812251e-16 670,1.790861 670,4 L670,316 C670,318.209139 668.209139,320 666,320 L4,320 C1.790861,320 -6.20239004e-16,318.209139 -8.90780505e-16,316 L-8.90780505e-16,4 C-1.16132201e-15,1.790861 1.790861,4.05812251e-16 4,0 Z" id="path-1"></path>
-                    <filter x="-7.8%" y="-11.7%" width="115.7%" height="132.8%" filterUnits="objectBoundingBox" id="filter-2">
-                        <feOffset dx="0" dy="15" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-                        <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-                        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-                    </filter>
-                    <polygon id="path-3" points="6.49922109e-13 56 670 56 670 57 -8.90780505e-16 57"></polygon>
-                    <filter x="-7.8%" y="-3750.0%" width="115.7%" height="10600.0%" filterUnits="objectBoundingBox" id="filter-4">
-                        <feOffset dx="0" dy="15" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-                        <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-                        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-                    </filter>
-                </defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="02" transform="translate(-675.000000, -284.000000)">
-                        <g id="Group" transform="translate(705.000000, 299.000000)">
-                            <g id="Group-3">
-                                <g id="Rectangle">
-                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                                    <use fill="#152435" fill-rule="evenodd" xlink:href="#path-1"></use>
-                                </g>
-                                <g id="Rectangle" opacity="0.200000003">
-                                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
-                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
-                                </g>
-                                <g id="Group-2" opacity="0.200000003" transform="translate(18.000000, 21.000000)" stroke="#FFFFFF">
-                                    <g id="Group-4">
-                                        <circle id="Oval" cx="5.91428571" cy="5.91428571" r="5.91428571"></circle>
-                                        <circle id="Oval" cx="23" cy="5.91428571" r="5.91428571"></circle>
-                                        <circle id="Oval" cx="40.0857143" cy="5.91428571" r="5.91428571"></circle>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-              </svg>
+              <div class="terminal">
+
+                <div class="terminal-header">
+                  <div class="terminal-circle-container">
+                    <div class="terminal-circle"></div>
+                    <div class="terminal-circle"></div>
+                    <div class="terminal-circle"></div>
+                  </div>
+                </div>
+
+                <div class="terminal-inner">
+                  <p>aws --profile mlp s3api create-bucket -- <span class="typed"></span></p>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -162,6 +143,11 @@
 
         <div class="image-text__container">
           <div class="container container__flex container__flex--content-end">
+
+            <div class="image-text__image">
+              <img src="img/illustration-fade.png" alt="" />
+            </div>
+
             <div class="image-text__text">
               <h2>Built for AWS</h2>
               <p>Take serverless blockchain to your customers, with all the benefits of AWS Lambda:</p>
@@ -219,10 +205,11 @@
 
       <svg class="svg--bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <polygon id="polygon" fill="white" points="0,100 40,100 85,0 0,0" />
-        <polygon id="polygon-mobile" fill="white" points="0,90 100,80 100,0 0,0" />
       </svg>
 
-    </div>
+      <div class="image--bg" style="background-image: url('img/hero.jpg');">
+      </div>
+
 
   </main>
 

@@ -38,3 +38,16 @@ var scene2 = new ScrollMagic.Scene({
 // 			.addTo(controller);
 // 	}
 // });
+
+$(document).ready(function() {
+});
+
+jQuery(function($) {
+
+  $('.typed').typist({speed: 12, text: 'asdfjkl\n'})
+  .typistPause(3000)
+  .typistAdd('./deploy.sh <bucket asdfjk> <stack>\n')
+  .typistPause(3000)
+  .typistAdd('aws --profile mlp lambda invoke -- function-name mlp-init')
+
+});

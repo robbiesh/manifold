@@ -21,13 +21,17 @@ $dark-grey: #5b6878;
 
 html, body {
   font-family: "Gotham";
+  overflow-x: hidden;
 }
 
 section {
-  height: 100vh;
   width: 100%;
   position: relative;
   z-index: 10;
+
+  @include media-query($large-up) {
+    height: 100vh;
+  }
 }
 
 footer {
@@ -139,6 +143,12 @@ p {
 //   }
 // }
 
+.gallery {
+  @include media-query($medium-down) {
+    background-color: white;
+  }
+}
+
 .banner {
   overflow: hidden;
   background-position: right bottom;
@@ -149,7 +159,10 @@ p {
 }
 
 .banner__container {
-  @include center;
+
+  @include media-query($large-up) {
+      @include center;
+  }
 
   p {
     margin-bottom: 90px;
@@ -161,10 +174,14 @@ p {
 
   @include media-query($medium-down) {
       text-align: center;
+      padding: 100px 0 250px;
   }
 }
 
 .text-image {
+  @include media-query($medium-down) {
+    background: white;
+  }
   // background-size: cover;
   // background-position: right top;
   // background-repeat: no-repeat;
@@ -187,7 +204,13 @@ p {
 }
 
 .text-image__container {
-  @include center;
+  @include media-query($large-up) {
+      @include center;
+  }
+
+  @include media-query($medium-down) {
+    padding: 100px 0;
+  }
 }
 
 .highlight {
@@ -243,6 +266,7 @@ p {
     @include media-query($medium-down) {
       font-size: 16px;
       line-height: 2.22em;
+      margin-bottom: 40px;
     }
   }
 
@@ -256,13 +280,17 @@ p {
   text-align: center;
   width: 60%;
 
-
   > svg {
     max-width: 100%;
   }
 
   @include media-query($medium-down) {
     width: 100%;
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 270px;
   }
 }
 
@@ -272,7 +300,10 @@ p {
 
 .gallery__container {
   width: 100%;
-  @include center;
+
+  @include media-query($large-up) {
+      @include center;
+  }
 }
 
 .gallery__text {
@@ -295,6 +326,7 @@ p {
 
   @include media-query($medium-down) {
     width: 100%;
+    margin-bottom: 65px;
   }
 }
 
@@ -312,7 +344,7 @@ p {
 
   @include media-query($medium-down) {
     width: 50%;
-    padding-bottom: 50%;
+
   }
 
   &:hover {
@@ -356,14 +388,23 @@ p {
   background-color: $dark-blue;
   background-position: left bottom;
   background-repeat: no-repeat;
+  background-size: 50%;
 
   h2, p, ul {
     color: white;
   }
+
+  @include media-query($medium-down) {
+    padding: 100px 0 100px;
+    background-image: none !important;
+  }
 }
 
 .image-text__container {
-  @include center;
+
+  @include media-query($large-up) {
+    @include center;
+  }
 }
 
 .image-text__text {
@@ -411,6 +452,22 @@ p {
       position: relative;
       left: 10px;
     }
+
+    @include media-query($medium-down) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.image-text__image {
+  display: none;
+
+  @include media-query($medium-down) {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
@@ -419,6 +476,7 @@ p {
 
   @include media-query($medium-down) {
     height: 300px;
+    background: white;
   }
 }
 
@@ -505,7 +563,7 @@ footer {
   }
 }
 
-main {
+.image--bg {
   position: fixed;
   width: 100%;
   overflow-y: scroll;
@@ -513,10 +571,27 @@ main {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: -5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .svg--bg {
   position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(10px 10px 7px rgba(0,0,0,0.4));
+  z-index: -1;
+}
+
+.svg--bg--mobile {
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -539,7 +614,7 @@ main {
 
 #trigger2 {
   position: absolute;
-  top: 50%;
+  bottom: 0;
 }
 
 #polygon-mobile {
@@ -553,5 +628,75 @@ main {
 #polygon {
   @include media-query($medium-down) {
     display: none;
+  }
+}
+
+.terminal {
+  background-color: #152435;
+  border-radius: 4px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  @include media-query($medium-down) {
+    height: 145px;
+  }
+}
+
+.terminal-header {
+  height: 56px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  @include media-query($medium-down) {
+    height: 25px;
+  }
+}
+
+.terminal-circle-container {
+  padding-left: 20px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.terminal-circle {
+  height: 12px;
+  width: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin-right: 5px;
+
+  @include media-query($medium-down) {
+    height: 5px;
+    width: 5px;
+  }
+}
+
+.terminal-inner {
+  width: 100%;
+  flex: 1;
+  padding: 25px;
+  text-align: left;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  box-sizing: border-box;
+
+  p {
+    line-height: 1.75em;
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    margin: 0;
+
+    @include media-query($medium-down) {
+      font-size: 8px;
+    }
+  }
+
+  @include media-query($medium-down) {
+    padding: 12.5px;
   }
 }
