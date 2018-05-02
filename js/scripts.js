@@ -31,6 +31,34 @@ var scene2 = new ScrollMagic.Scene({
 //   console.log('end');
 // }
 
+function runTyping() {
+  setTimeout(function(){
+    $('.typed-1').typist({speed: 12, text: 'asdfjkl'})
+    .typistPause(2000)
+    .on('end_pause.typist', function() {
+
+      $(".typed-1").addClass("typed--hidden");
+
+      setTimeout(function(){
+        $('.typed-2').typist({speed: 12, text: './deploy.sh <bucket asdfjk> <stack>'})
+        .typistPause(2000)
+        .on('end_pause.typist', function() {
+
+          $(".typed-2").addClass("typed--hidden");
+
+          setTimeout(function(){
+            $('.typed-3').typist({speed: 12, text: 'aws --profile mlp lambda invoke -- function-name mlp-init'})
+            .typistPause(3000)
+            .on('end_pause.typist', function() {              
+            });
+          }, 1000);
+
+        });
+      }, 1000);
+
+    });
+  }, 1000);
+}
 
 var wow = new WOW(
   {
@@ -47,30 +75,8 @@ var wow = new WOW(
 
       if ($(box).hasClass("terminal")) {
 
-        setTimeout(function(){
-          $('.typed-1').typist({speed: 12, text: 'asdfjkl'})
-          .typistPause(2000)
-          .on('end_pause.typist', function() {
 
-            $(".typed-1").addClass("typed--hidden");
-
-            setTimeout(function(){
-              $('.typed-2').typist({speed: 12, text: './deploy.sh <bucket asdfjk> <stack>'})
-              .typistPause(2000)
-              .on('end_pause.typist', function() {
-
-                $(".typed-2").addClass("typed--hidden");
-
-                setTimeout(function(){
-                  $('.typed-3').typist({speed: 12, text: 'aws --profile mlp lambda invoke -- function-name mlp-init'});
-                }, 1000);
-
-              });
-            }, 1000);
-
-          });
-        }, 1000);
-        //
+        runTyping();
 
         //
         // setTimeout(function(){
