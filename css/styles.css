@@ -1143,6 +1143,9 @@ footer li > div:after {
     display: none;
   }
 }
+.image-text--bg img {
+  max-width: 100%;
+}
 .typed {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

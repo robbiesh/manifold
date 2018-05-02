@@ -775,6 +775,10 @@ footer {
   @include media-query($medium-down) {
     display: none;
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .typed {
