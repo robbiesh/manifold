@@ -634,6 +634,11 @@ p {
 .banner__inner {
   padding: 75px;
 }
+@media only screen and (max-width: 768px) {
+  .banner__inner {
+    padding: 0;
+  }
+}
 @media only screen and (min-width: 769px) {
   .text-image__container {
     position: absolute;

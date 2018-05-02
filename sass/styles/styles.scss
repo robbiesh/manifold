@@ -247,6 +247,10 @@ p {
 
 .banner__inner {
   padding: 75px;
+
+  @include media-query($medium-down) {
+    padding: 0;
+  }
 }
 
 .text-image__container {
