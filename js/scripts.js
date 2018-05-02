@@ -1,27 +1,35 @@
+window.onbeforeunload = function(){ window.scrollTo(0,0); }
+
 var controller = new ScrollMagic.Controller();
 
-var tween2 = TweenMax.fromTo("#polygon", 0.5, {attr: {points:"0,100 75,100 75,0 0,0"}}, {attr: {points:"0,100 100,100 100,0 0,0"}});
-var tween1 = TweenMax.fromTo("#polygon", 0.5, {attr: {points:"0,100 40,100 85,0 0,0"}}, {attr: {points:"0,100 75,100 75,0 0,0"}});
-
 var scene1 = new ScrollMagic.Scene({
-    triggerElement: "#trigger1",
-    globalSceneOptions: {
-	        triggerHook: 'onLeave'
-	    }
+    triggerElement: "#trigger1"
   })
-  .setTween(tween1) // trigger a TweenMax.to tween
+  // .setTween(tween1) // trigger a TweenMax.to tween
+  .setTween("#polygon", 0.5, {attr: {points:"0,100 75,100 75,0 0,0"}})
   // .addIndicators({name: "trigger1"})
   .addTo(controller);
 
 var scene2 = new ScrollMagic.Scene({
-    triggerElement: "#trigger2",
-    globalSceneOptions: {
-	        triggerHook: 'onLeave'
-	    }
+    triggerElement: "#trigger2"
   })
-  .setTween(tween2) // trigger a TweenMax.to tween
+  // .setTween(timeline2) // trigger a TweenMax.to tween
+  .setTween("#polygon", 0.5, {attr: {points:"0,100 100,100 100,0 0,0"}})
   // .addIndicators({name: "trigger2"})
   .addTo(controller);
+
+
+// function start(){
+//   console.log('start');
+// }
+//
+// function update(){
+//   console.log('animating');
+// }
+//
+// function complete(){
+//   console.log('end');
+// }
 
 
 var wow = new WOW(
