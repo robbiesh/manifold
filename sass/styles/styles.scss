@@ -282,6 +282,7 @@ p {
   img {
     // filter: grayscale(100%);
     display: block;
+    max-width: 35px;
   }
 }
 
@@ -293,14 +294,17 @@ p {
   align-items: center;
   font-size: 12px;
   font-weight: 500;
-  line-height: 3.33em;
+  line-height: 1.75em;
   letter-spacing: 1px;
   color: $dark-grey;
+  max-width: 100%;
+  padding-right: 30px;
 
   img {
     filter: grayscale(100%);
     display: block;
     margin-right: 20px;
+    max-width: 35px;
   }
 }
 
