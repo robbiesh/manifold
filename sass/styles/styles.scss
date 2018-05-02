@@ -445,6 +445,7 @@ p {
   background-repeat: no-repeat;
   background-size: 50%;
   overflow: hidden;
+  height: inherit !important;
 
   h2, p, ul {
     color: white;
@@ -458,19 +459,21 @@ p {
 
 .image-text__container {
 
-  @include media-query($large-up) {
-    @include center;
-  }
+  // @include media-query($large-up) {
+  //   @include center;
+  // }
 }
 
 .image-text__text {
   width: 40%;
+  padding: 150px 0;
 
   @include media-query($medium-down) {
     width: 100%;
     text-align: center;
     top: -70px;
     position: relative;
+    padding: 0;
   }
 
   p {
@@ -802,17 +805,19 @@ footer {
 }
 
 .image-text--bg {
-  width: 50%;
+  width: 55%;
   position: absolute;
   bottom: 0;
   left: 0;
+  direction: rtl;
+  text-align: left;
 
   @include media-query($medium-down) {
     display: none;
   }
 
   img {
-    max-width: 100%;
+
   }
 }
 

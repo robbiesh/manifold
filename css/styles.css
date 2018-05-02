@@ -823,6 +823,7 @@ p {
   background-repeat: no-repeat;
   background-size: 50%;
   overflow: hidden;
+  height: inherit !important;
 }
 .image-text h2, .image-text p, .image-text ul {
   color: white;
@@ -833,19 +834,9 @@ p {
     background-image: none !important;
   }
 }
-@media only screen and (min-width: 769px) {
-  .image-text__container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    max-width: 100%;
-  }
-}
 .image-text__text {
   width: 40%;
+  padding: 150px 0;
 }
 @media only screen and (max-width: 768px) {
   .image-text__text {
@@ -853,6 +844,7 @@ p {
     text-align: center;
     top: -70px;
     position: relative;
+    padding: 0;
   }
 }
 .image-text__text p {
@@ -1176,18 +1168,17 @@ footer li a:hover:after {
   }
 }
 .image-text--bg {
-  width: 50%;
+  width: 55%;
   position: absolute;
   bottom: 0;
   left: 0;
+  direction: rtl;
+  text-align: left;
 }
 @media only screen and (max-width: 768px) {
   .image-text--bg {
     display: none;
   }
-}
-.image-text--bg img {
-  max-width: 100%;
 }
 .typed {
   -webkit-transition: all 0.3s;
