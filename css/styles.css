@@ -546,6 +546,9 @@ p {
 .btn:hover {
   opacity: 0.5;
 }
+.gallery {
+  height: inherit !important;
+}
 @media only screen and (max-width: 767px) {
   .gallery {
     background-color: white;
@@ -690,17 +693,6 @@ p {
 .gallery__container {
   width: 100%;
 }
-@media only screen and (min-width: 768px) {
-  .gallery__container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    max-width: 100%;
-  }
-}
 .gallery__text {
   width: 60%;
   display: block;
@@ -781,6 +773,7 @@ p {
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: 50%;
+  overflow: hidden;
 }
 .image-text h2, .image-text p, .image-text ul {
   color: white;
@@ -1103,4 +1096,21 @@ footer li > div:after {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+@media only screen and (max-width: 767px) {
+  .image-text--bg {
+    display: none;
+  }
+}
+.typed {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  top: 0;
+  opacity: 1;
+}
+.typed--hidden {
+  opacity: 0;
+  height: 0;
+  top: -15px;
 }

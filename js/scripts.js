@@ -1,54 +1,28 @@
 var controller = new ScrollMagic.Controller();
 
-var move_polygon = new TimelineMax()
-  .to("#polygon", 0.5, {attr: {points:"0,100 75,100 75,0 0,0"}});
+var tween2 = TweenMax.fromTo("#polygon", 0.5, {attr: {points:"0,100 75,100 75,0 0,0"}}, {attr: {points:"0,100 100,100 100,0 0,0"}});
+var tween1 = TweenMax.fromTo("#polygon", 0.5, {attr: {points:"0,100 40,100 85,0 0,0"}}, {attr: {points:"0,100 75,100 75,0 0,0"}});
 
 var scene1 = new ScrollMagic.Scene({
-    triggerElement: "#trigger1"
+    triggerElement: "#trigger1",
+    globalSceneOptions: {
+	        triggerHook: 'onLeave'
+	    }
   })
-  .setTween(move_polygon) // trigger a TweenMax.to tween
+  .setTween(tween1) // trigger a TweenMax.to tween
+  .addIndicators({name: "trigger1"})
   .addTo(controller);
 
 var scene2 = new ScrollMagic.Scene({
-    triggerElement: "#trigger2"
+    triggerElement: "#trigger2",
+    globalSceneOptions: {
+	        triggerHook: 'onLeave'
+	    }
   })
-  .setTween("#polygon", 0.5, {attr: {points:"0,100 100,100 100,0 0,0"}}) // trigger a TweenMax.to tween
+  .setTween(tween2) // trigger a TweenMax.to tween
+  .addIndicators({name: "trigger2"})
   .addTo(controller);
 
-
-// $(function () { // wait for document ready
-// 	// init
-// 	var controller = new ScrollMagic.Controller({
-// 		globalSceneOptions: {
-// 			triggerHook: 'onLeave'
-// 		}
-// 	});
-//
-// 	// get all slides
-// 	var slides = document.querySelectorAll("section");
-//
-// 	// create scene for every slide
-// 	for (var i=0; i<slides.length; i++) {
-// 		new ScrollMagic.Scene({
-// 				triggerElement: slides[i]
-// 			})
-// 			.setPin(slides[i])
-// 			.addIndicators() // add indicators (requires plugin)
-// 			.addTo(controller);
-// 	}
-// });
-
-jQuery(function($) {
-
-  
-
-  $('.typed').typist({speed: 12, text: 'asdfjkl\n'})
-    .typistPause(3000)
-    .typistAdd('./deploy.sh <bucket asdfjk> <stack>\n')
-    .typistPause(3000)
-    .typistAdd('aws --profile mlp lambda invoke -- function-name mlp-init');
-
-});
 
 var wow = new WOW(
   {
@@ -58,8 +32,44 @@ var wow = new WOW(
     mobile:       true,       // trigger animations on mobile devices (default is true)
     live:         true,       // act on asynchronously loaded content (default is true)
     callback:     function(box) {
+
+      // console.log($(box));
       // the callback is fired every time an animation is started
       // the argument that is passed in is the DOM node being animated
+
+      if ($(box).hasClass("terminal")) {
+
+        setTimeout(function(){
+          $('.typed-1').typist({speed: 12, text: 'asdfjkl'})
+          .typistPause(2000)
+          .on('end_pause.typist', function() {
+
+            $(".typed-1").addClass("typed--hidden");
+
+            setTimeout(function(){
+              $('.typed-2').typist({speed: 12, text: './deploy.sh <bucket asdfjk> <stack>'})
+              .typistPause(2000)
+              .on('end_pause.typist', function() {
+
+                $(".typed-2").addClass("typed--hidden");
+
+                setTimeout(function(){
+                  $('.typed-3').typist({speed: 12, text: 'aws --profile mlp lambda invoke -- function-name mlp-init'});
+                }, 1000);
+
+              });
+            }, 1000);
+
+          });
+        }, 1000);
+        //
+
+        //
+        // setTimeout(function(){
+        //   $('.typed-2').typist({speed: 12, text: './deploy.sh <bucket asdfjk> <stack>'});
+        // }, 2000);
+
+      }
     },
     scrollContainer: null // optional scroll container selector, otherwise use window
   }

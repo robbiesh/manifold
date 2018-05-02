@@ -144,6 +144,8 @@ p {
 // }
 
 .gallery {
+  height: inherit !important;
+
   @include media-query($medium-down) {
     background-color: white;
   }
@@ -301,9 +303,9 @@ p {
 .gallery__container {
   width: 100%;
 
-  @include media-query($large-up) {
-      @include center;
-  }
+  // @include media-query($large-up) {
+  //     @include center;
+  // }
 }
 
 .gallery__text {
@@ -389,6 +391,7 @@ p {
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: 50%;
+  overflow: hidden;
 
   h2, p, ul {
     color: white;
@@ -710,4 +713,17 @@ footer {
   @include media-query($medium-down) {
     display: none;
   }
+}
+
+.typed {
+  transition: all 0.3s;
+  position: relative;
+  top: 0;
+  opacity: 1;
+}
+
+.typed--hidden {
+  opacity: 0;
+  height: 0;
+  top: -15px;
 }
