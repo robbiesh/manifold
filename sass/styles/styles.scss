@@ -602,12 +602,9 @@ footer {
     a {
       color: white;
       text-decoration: none;
-    }
-
-    > div {
-      display: inline-block;
       position: relative;
       padding-right: 35px;
+      display: inline-block;
 
       &:after {
         position: absolute;
@@ -622,8 +619,24 @@ footer {
         height: 16px;
         width: 10px;
         content: "";
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        opacity: 0.8;
+        &:after {
+          right: -10px;
+        }
       }
     }
+
+    // > div {
+    //   display: inline-block;
+    //   position: relative;
+    //   padding-right: 35px;
+    //
+    //
+    // }
   }
 }
 

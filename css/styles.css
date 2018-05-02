@@ -986,13 +986,11 @@ footer li {
 footer li a {
   color: white;
   text-decoration: none;
-}
-footer li > div {
-  display: inline-block;
   position: relative;
   padding-right: 35px;
+  display: inline-block;
 }
-footer li > div:after {
+footer li a:after {
   position: absolute;
   top: 50%;
   right: 0;
@@ -1006,6 +1004,14 @@ footer li > div:after {
   height: 16px;
   width: 10px;
   content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+footer li a:hover {
+  opacity: 0.8;
+}
+footer li a:hover:after {
+  right: -10px;
 }
 .image--bg {
   position: fixed;
