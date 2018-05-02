@@ -437,7 +437,7 @@ template {
   text-align: center;
 }
 html, body {
-  font-family: "Gotham";
+  font-family: "usual";
   overflow-x: hidden;
 }
 section {
@@ -585,7 +585,7 @@ p {
 @media only screen and (max-width: 767px) {
   .banner__container {
     text-align: center;
-    padding: 100px 0 250px;
+    padding: 50px 0 200px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -674,7 +674,8 @@ p {
 }
 .text-image__image {
   text-align: center;
-  width: 60%;
+  width: 50%;
+  margin-left: 10%;
 }
 .text-image__image > svg {
   max-width: 100%;
@@ -682,6 +683,7 @@ p {
 @media only screen and (max-width: 767px) {
   .text-image__image {
     width: 100%;
+    margin-left: 0;
     position: absolute;
     top: -75px;
     left: 50%;
@@ -954,7 +956,6 @@ footer li > div:after {
 .image--bg {
   position: fixed;
   width: 100%;
-  overflow-y: scroll;
   height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -964,6 +965,11 @@ footer li > div:after {
   bottom: 0;
   left: 0;
   right: 0;
+}
+@media only screen and (max-width: 767px) {
+  .image--bg {
+    background-size: 100%;
+  }
 }
 .svg--bg {
   position: fixed;

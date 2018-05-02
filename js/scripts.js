@@ -10,7 +10,7 @@ var scene1 = new ScrollMagic.Scene({
 	    }
   })
   .setTween(tween1) // trigger a TweenMax.to tween
-  .addIndicators({name: "trigger1"})
+  // .addIndicators({name: "trigger1"})
   .addTo(controller);
 
 var scene2 = new ScrollMagic.Scene({
@@ -20,7 +20,7 @@ var scene2 = new ScrollMagic.Scene({
 	    }
   })
   .setTween(tween2) // trigger a TweenMax.to tween
-  .addIndicators({name: "trigger2"})
+  // .addIndicators({name: "trigger2"})
   .addTo(controller);
 
 

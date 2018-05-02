@@ -19,8 +19,9 @@ $dark-blue: #152435;
 $yellow: #F98D00;
 $dark-grey: #5b6878;
 
+
 html, body {
-  font-family: "Gotham";
+  font-family: "usual";
   overflow-x: hidden;
 }
 
@@ -176,7 +177,7 @@ p {
 
   @include media-query($medium-down) {
       text-align: center;
-      padding: 100px 0 250px;
+      padding: 50px 0 200px;
   }
 }
 
@@ -280,7 +281,8 @@ p {
 
 .text-image__image {
   text-align: center;
-  width: 60%;
+  width: 50%;
+  margin-left: 10%;
 
   > svg {
     max-width: 100%;
@@ -288,6 +290,7 @@ p {
 
   @include media-query($medium-down) {
     width: 100%;
+    margin-left: 0;
     position: absolute;
     top: -75px;
     left: 50%;
@@ -569,7 +572,7 @@ footer {
 .image--bg {
   position: fixed;
   width: 100%;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -579,6 +582,10 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+
+  @include media-query($medium-down) {
+    background-size: 100%;
+  }
 }
 
 .svg--bg {
